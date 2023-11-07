@@ -10,7 +10,8 @@ class SearchFooter extends StatelessWidget {
     return Column(children: [
       Container(
         color: footerColor,
-        padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 15),
+        padding: EdgeInsets.symmetric(
+            horizontal: size.width <= 768 ? 10 : 150, vertical: 15),
         child: Row(
           children: [
             Text(
@@ -32,7 +33,7 @@ class SearchFooter extends StatelessWidget {
             const SizedBox(width: 10),
             const Flexible(
               child: Text(
-                "412207 - Pune, MAH",
+                "412207 - Pune, Maharasthra",
                 softWrap: true,
                 style: TextStyle(fontSize: 14, color: primaryColor),
               ),

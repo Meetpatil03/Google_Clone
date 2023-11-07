@@ -3,9 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_clone/colors.dart';
 import 'package:google_clone/widgets/mobile/mobile_footer.dart';
 import 'package:google_clone/widgets/search.dart';
-import 'package:google_clone/widgets/web/search_button.dart';
-import 'package:google_clone/widgets/web/translation_button.dart';
-
 
 class MobileSceenLayout extends StatelessWidget {
   const MobileSceenLayout({super.key});
@@ -68,21 +65,21 @@ class MobileSceenLayout extends StatelessWidget {
         child: Column(children: [
           SizedBox(height: size.height * 0.25),
           const Expanded(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Search(),
-                      SizedBox(height: 20),
-                      SearchButton(),
-                      SizedBox(height: 20),
-                      TranslationButton(),
-                    ],
-                  ),
-                  MobileFooter(),
-                ]),
-          )
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Search(),
+                        SizedBox(height: 20),
+                      ],
+                    ),
+                  ]),
+            ),
+          ),
+          const MobileFooter(),
         ]),
       ),
     );
